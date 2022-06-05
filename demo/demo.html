@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form>
+    <input type="text" placeholder="enter your name" id='name'>
+    <label for="Male">Male</label>
+    <input type="radio" name="gender" id="male" value="male">
+    <label for="female">Female</label>
+    <input type="radio" name="gender" id="female" value="male">
+    <h4>Choose your subject</h4>
+    <label>bengali</label>
+    <input type="checkBox" id="bengali" value="bengali">
+    <label>english</label>
+    <input type="checkBox" id="english" value="english">
+    <button>submit</button>
+</form>
+
+<script>
+
+let btn=document.querySelector('button');
+btn.addEventListener('click',(e)=>{
+handleForm(e)
+});
+let name=document.getElementById("name");
+ let male=document.getElementById("male");
+ male.addEventListener('click',handleForm)
+// let female=document.getElementById("female");
+console.log(document.querySelector('input[name="gender"]:checked'));
+
+
+
+// bengali.addEventListener('click',handleForm)
+// let english=document.getElementById("english");
+function handleForm(e){
+    e.preventDefault()
+    // console.log(document.querySelector('input[name="gender"]:checked').value);
+// console.log(document.querySelector('input[type="checkbox"]:checked').value)
+
+let checkBox=document.querySelectorAll('input[type="checkBox"]:checked');
+console.log(checkBox)
+
+}
+</script>
+</body>
+</html>
