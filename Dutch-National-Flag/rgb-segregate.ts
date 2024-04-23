@@ -5,7 +5,7 @@
 // For example, given the array ['G', 'B', 'R', 'R', 'B', 'R', 'G'], it should become ['R', 'R', 'R', 'G', 'G', 'B', 'B'].
 
 //not optimized
-const rgbSegregate = (arr) => {
+const rgbSegregate = (arr: ("R" | "G" | "B")[]): ("R" | "G" | "B")[] => {
   const obj = {
     R: 0,
     G: 0,
@@ -14,7 +14,7 @@ const rgbSegregate = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     obj[arr[i]]++;
   }
-  const result = [];
+  const result: ("R" | "G" | "B")[] = [];
   for (let i = 0; i < obj.R; i++) {
     result.push("R");
   }
@@ -41,7 +41,7 @@ If the character is 'G', it doesn't need to do anything (since 'G' is in the cor
 If the character is 'B', it swaps the character at the mid pointer with the character at the high pointer, and then decrements the high pointer (but doesn't increment the mid pointer, since the new character at the mid position hasn't been processed yet).
 This ensures that all 'R' characters are placed before all 'G' characters, and all 'G' characters are placed before all 'B' characters, thus segregating the array as required. The time complexity of this function is O(n), where n is the length of the array, and it uses O(1) extra space, so it meets the problem's requirements.
  */
-const rgbSegregateDNF = (arr) => {
+const rgbSegregateDNF = (arr: ("R" | "G" | "B")[]) => {
   let low = 0;
   let mid = 0;
   let high = arr.length - 1;
